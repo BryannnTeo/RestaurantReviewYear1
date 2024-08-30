@@ -1,0 +1,184 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/logo.png">
+        <title>Food Center</title>
+        <link rel= "stylesheet" href= "css/restaurantDetails.css">
+        <link rel= "stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel= "stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    </head>
+    <body onload="checkToken(), showRestaurantDetails(), getRestaurantMenu(), getRestaurantLinks(), getReviewData();">
+        <header>
+            <div class="logo">
+                <img src="images/logo.png">
+            </div>
+
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurant.html">Restaurants</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+            </ul>
+    
+            <div class="menu">
+                <div class="select">
+                    <img id="accountPfp" src="images/user_pfp/default.jpg">
+                    <a class="user" id="accountUsername">Guest</a>  
+                    <ul class="list">
+                        <li id="profile"><a href="profile.html"><i class="ri-user-fill"></i>&nbsp;&nbsp;&nbsp;Profile</a></li>
+                        <li id="login"><a href="login.html"><i class="ri-login-box-line"></i>&nbsp;&nbsp;&nbsp;LogIn</a></li>
+                        <li id="signout" onclick="logoutMe();"><a><i class="ri-logout-box-line"></i>&nbsp;&nbsp;&nbsp;SignOut</a></li>
+                    </ul>    
+                </div>   
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </header>
+        
+        <div class="main">
+            <div class="restaurantInfo">
+                <p class="restaurantName" id="name">Restaurant Name</p>
+                <p class="restaurantDescription" id="description">Description</p>
+            </div>
+
+            <div class="restaurantMenu">
+                <div class="title">Food you would not want to miss out !</div>
+
+                <div class="menuContainer">
+
+                    <input type="radio" name="slider" id="s1" checked>
+                    <input type="radio" name="slider" id="s2">
+                    <input type="radio" name="slider" id="s3">
+                    <input type="radio" name="slider" id="s4">
+                    <input type="radio" name="slider" id="s5">
+
+                    <div class="cards">
+                        <label for="s1" id="slide1">
+                            <img id="menu-item-1" src="">
+                        </label>
+                        <label for="s2" id="slide2">
+                            <img id="menu-item-2" src="">
+                        </label>
+                        <label for="s3" id="slide3">
+                            <img id="menu-item-3" src="">
+                        </label>
+                        <label for="s4" id="slide4">
+                            <img id="menu-item-4" src="">
+                        </label>
+                        <label for="s5" id="slide5">
+                            <img id="menu-item-5" src="">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurantDetails">
+                <div class="info">
+                    <p class="restaurantDetail">Details</p>
+                    <div class="restaurantOpen-time">
+                        <div class="title">Opening Timing: </div>
+                        <div class="object" id="open-time"></div>
+                    </div>
+                    <div class="restaurantAddress">
+                        <div class="title">Address: </div>
+                        <div class="object" id="address"></div>
+                    </div>
+                    <div class="restaurantLinks">
+                        <div class="title">Our Socials:</div>
+                        <div class="object">
+                            <a href="#" id="facebook" target="_blank"><i class="ri-facebook-circle-fill"></i></a>
+                            <a href="#" id="instagram" target="_blank"><i class="ri-instagram-fill"></i></a>
+                            <a href="#" id="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </div>
+                    </div>
+                    <div class="restaurantWebsite"><a href="#" id="website" target="_blank">Visit Our Website!</a></div>
+                </div>
+                <div class="map">
+                    <p class="restaurantGoogle-map" id="google-map"></p>
+                </div>
+            </div>
+
+            <div class="restaurantReviews">
+                <p class="header">Reviews</p>
+                <div id="reviewsTable" class="row"></div>
+
+                <div class="newReviewForm">
+                    <button class="newReviewButton" id="newReview" style="height: 35px; width: 110px;" type="button" onclick="openPopup();">Leave a review!</button>
+
+                    <div class="popup">
+                        <div class="modal-header bg-dark text-center">
+                            <h3 class="modal-title text-light">Leave a Review</h3>
+                        </div>
+                        <div class="modal-body px-5">
+                            <!-- All input to be sent to server, and buttons must be within the 'form' tag -->
+                            <form id="reviewForm">
+                                <div class="row" text-center id="ReviewBody">
+                                    <label for="userReviews">Review</label>
+                                    <textarea id="userReviews" required class="form-control form-rounded" rows="3" cols="100%"></textarea>
+                                    <label for="star">Rating</label>
+                                    <img src="images/star_bw.png" style ='width:50px' class="star" value="1" onclick="rateIt(this)" />
+                                    <img src="images/star_bw.png" style ='width:50px' class="star" value="2" onclick="rateIt(this)" />
+                                    <img src="images/star_bw.png" style ='width:50px' class="star" value="3" onclick="rateIt(this)" />
+                                    <img src="images/star_bw.png" style ='width:50px' class="star" value="4" onclick="rateIt(this)" />
+                                    <img src="images/star_bw.png" style ='width:50px' class="star" value="5" onclick="rateIt(this)" />
+                                </div>
+            
+                                <div class="modal-footer">
+                                    <button type="button" style="height: 35px; width: 110px;" class="btn btn-primary"  id="submitReview" onClick="addReview(), closePopup();">Submit</button>
+                                    <button type = "button" style="height: 35px; width: 110px;" class = "btn btn-secondary bg-dark" onclick="closePopup();">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="popupEdit">
+                <div class="array-index" style="display: none;">This is the array index</div>
+                <div class="modal-header bg-dark text-center">
+                    <h3 class="modal-title text-light">Edit Review</h3>
+                </div>
+                <div class="modal-body px-5">
+                    <!-- All input to be sent to server, and buttons must be within the 'form' tag -->
+                    <form id="reviewForm">
+                        <div class="row" text-center id="editReviewBody">
+                            <label for="userReviews">Review</label>
+                            <textarea id="editUserReviews" required class="form-control form-rounded" rows="3" cols="100%"></textarea>
+                            <label for="star">Rating</label>
+                            <img src="images/star_bw.png" style ='width:50px' class="starEdit" value="1" onclick="rateIt(this)" />
+                            <img src="images/star_bw.png" style ='width:50px' class="starEdit" value="2" onclick="rateIt(this)" />
+                            <img src="images/star_bw.png" style ='width:50px' class="starEdit" value="3" onclick="rateIt(this)" />
+                            <img src="images/star_bw.png" style ='width:50px' class="starEdit" value="4" onclick="rateIt(this)" />
+                            <img src="images/star_bw.png" style ='width:50px' class="starEdit" value="5" onclick="rateIt(this)" />
+                        </div>
+    
+                        <div class="modal-footer">
+                            <button type="button" style="height: 35px; width: 110px;" class="btn btn-primary"  id="submitReview" onClick="updateReview(), closePopupEdit();">Submit</button>
+                            <button type = "button" style="height: 35px; width: 110px;" class = "btn btn-secondary bg-dark" onclick="closePopupEdit();">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>Copyright © 2022 Food Center. All Rights Reserved.</p>
+        </footer>
+
+        <!--js link-->
+        <script>
+    
+        </script>
+        <script src="js/app.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/checktoken.js"></script>
+        <script src="js/restaurant.js"></script>
+        <script src="js/reviews.js"></script>
+        <script src="js/register.js"></script>
+    </body>
+</html>

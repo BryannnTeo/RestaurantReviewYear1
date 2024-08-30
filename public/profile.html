@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/logo.png">
+        <title>Food Center</title>
+        <link rel= "stylesheet" href= "css/profile.css">
+        <link rel= "stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel= "stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    </head>
+    <body onload="checkToken(), getUserProfile();">
+        <header>
+            <div class="logo">
+                <img src="images/logo.png">
+            </div>
+
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurant.html">Restaurants</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+            </ul>
+    
+            <div class="menu">
+                <div class="select">
+                    <img id="accountPfp" src="images/user_pfp/default.jpg">
+                    <a class="user" id="accountUsername">Guest</a>  
+                    <ul class="list">
+                        <li><a href="#"><i class="ri-user-fill"></i>&nbsp;&nbsp;&nbsp;Profile</a></li>
+                        <li id="login"><a href="login.html"><i class="ri-login-box-line"></i>&nbsp;&nbsp;&nbsp;LogIn</a></li>
+                        <li id="signout" onclick="logoutMe();"><a><i class="ri-logout-box-line"></i>&nbsp;&nbsp;&nbsp;SignOut</a></li>
+                    </ul>    
+                </div>   
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </header>
+
+        <div class="main">
+            <div class="panel">
+                <h2>Profile</h2>
+            </div>
+
+            <div style="display: flex;">
+            <div class="left">
+            <form id="Edit" class="edit">
+                <div class="form-row">
+                    <div class="form">
+                        <label for="username" style="font-size:17px">Username</label>
+                        <br>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+
+                    <br>
+                    <div class="form">
+                        <label for="email" style="font-size:17px">Email</label>
+                        <br>
+                        <input type="text" class="form-control" id="email"  aria-describedby="emailHelp" required>
+                    </div>
+
+                    <br>
+                    <div class="form">
+                        <label for="password" style="font-size:17px">Password</label>
+                        <br>
+                        <input type="password" disabled class="form-control" id="password" required>
+                    </div>
+                    
+                </div>
+            </form>
+            </div>
+
+            <div class="right">
+                <div class="form">
+                    <label for="myinput">Profile Picture</label>
+                    <br>
+                    <input type="file" id="myinput" style="margin-top:10px;" onchange="encode();" />
+                    <div>
+                        <img id="target" style="margin-top:30px;width: 230px;height: 230px;">
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="button">
+                <button id="update" type="submit" onclick="update();">Update Profile</button>
+                <button id="delete" type="submit" onclick="deleteProfile();">Delete Profile</button>
+            </div>
+        </div>
+
+
+        <footer>
+            <p>Copyright © 2022 Food Center. All Rights Reserved.</p>
+        </footer>
+
+        <!--js link-->
+        <script src="js/app.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/checktoken.js"></script>
+        <script src="js/restaurant.js"></script>
+        <script src="js/register.js"></script>
+        <script src="js/profile.js"></script>
+
+    </body>
+</html>

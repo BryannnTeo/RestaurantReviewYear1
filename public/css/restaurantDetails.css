@@ -1,0 +1,708 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&dislpay=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+.main
+{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/background_main.png);
+    background-position: center;
+    background-size: cover;
+}
+
+header
+{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid#ff4584;
+    padding: 28px 12%;
+    transition: all .50s ease;
+    display: flex;
+}
+
+
+header .logo
+{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+}
+
+header .logo img
+{
+    width: 65px;
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+header .navbar
+{
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+header .navbar a
+{
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 30px;
+    transition: all .50s ease; 
+}
+
+header .navbar a:hover
+{
+    color: #ff4584;
+}
+
+header .navbar a.active
+{
+    color: #ff4584;
+}
+
+header .menu
+{
+    display: flex;
+    align-items: center;
+    width: 250px;
+    justify-content: right;
+}
+
+header .menu img 
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+header .menu a
+{
+    margin-right: 25px;
+    margin-left: 10px;
+    padding-right: 10px;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+
+header .menu .select
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+}
+
+header .menu .select ul
+{
+    display: none;
+    position: absolute;
+    margin-top: 25px;
+    padding: 5px;
+    top: 120%;
+    right: 10px;
+    list-style: none;
+    background-color: #ff4584;
+    color: #fff;
+    width: 150px;
+    border-radius: 10px;
+    transition: all 0.5 ease;
+}
+
+header .menu .select ul li
+{
+    transition: all 0.5s ease;
+}
+
+header .menu .select ul li a:hover
+{
+    color: #fff;
+}
+
+header .menu .select ul.open
+{
+    display: block;
+}
+
+header .menu .select ul li
+{
+    padding: 5px 0px;
+}
+
+
+header .menu a:hover
+{
+    color: #ff4584;
+}
+
+.user
+{
+    display: flex;
+    align-items: center;
+}
+
+.user i
+{
+    color: #ff4584;
+    font-size: 28px;
+    margin-right: 7px;
+}
+
+header .menu #menu-icon
+{
+    font-size: 35px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+@media (max-width: 1280px){
+    header{
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    header .navbar a{
+        padding: 5px 0;
+        margin: 0px 20px;
+    }
+}
+
+@media (max-width: 1000px){
+    header .menu #menu-icon{
+        display: block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 29vh;
+        margin-top: 6px;
+        background: #ff4584;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+    }
+    header .navbar a{
+        display: block;
+        margin: 12px;
+        padding: 0px 25px;
+        transition: all .50s ease;
+    }
+    header .navbar a:hover{
+        color: #000;
+        transform: translateY(5px);   
+    }
+    header .navbar a.active{
+        color: #000;
+    }
+    header .navbar.open{
+        right: 2%;
+
+    }
+}
+
+.main
+{
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+footer 
+{
+    width: 100%;
+    right: 0;
+    background-image: url(../images/background.jpg);
+    padding: 28px 20%;
+    transition: all .50s ease;
+}
+
+footer p{
+    margin-left: 190px;
+}
+
+.main .restaurantInfo
+{
+    padding-top: 50px;
+    text-align: center;
+    justify-content: center;
+    color: f8f8ff;
+}
+
+.restaurantInfo .restaurantName
+{
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.restaurantInfo .restaurantDescription
+{
+    padding-top: 20px;
+    font-size: 1.7rem;
+    font-weight: 400;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menuContainer input
+{
+    display: none;
+}
+
+.restaurantMenu
+{
+    margin-top: 50px;
+}
+
+.restaurantMenu .title
+{
+    margin-left: 90px;
+    font-size: 1.6rem;
+    color: #f8f8ff;
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+
+.restaurantMenu .link
+{
+    margin-left: 90px;
+}
+
+.menuContainer
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    flex-direction: column;
+}
+
+.cards
+{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    margin-bottom: 20px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.cards label
+{
+    position: absolute;
+    width: 300px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    transition: transform 0.55s ease;
+}
+
+.cards img
+{
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);
+    transition: all 0.7s;
+}
+
+.cards img:hover
+{
+    transform: scale(1.05   );
+}
+
+#s1:checked~.cards #slide4,
+#s2:checked~.cards #slide5,
+#s3:checked~.cards #slide1,
+#s4:checked~.cards #slide2,
+#s5:checked~.cards #slide3{
+
+    box-shadow: 0 15px 30px rgba(0,0,0,45%);
+    transform: translate3d(-170%, 0 , -220px);
+}
+
+#s1:checked~.cards #slide5,
+#s2:checked~.cards #slide1,
+#s3:checked~.cards #slide2,
+#s4:checked~.cards #slide3,
+#s5:checked~.cards #slide4{
+
+    box-shadow: 0 20px 40px rgba(0,0,0,45%);
+    transform: translate3d(-85%, 0 , -120px);
+}
+
+#s1:checked~.cards #slide1,
+#s2:checked~.cards #slide2,
+#s3:checked~.cards #slide3,
+#s4:checked~.cards #slide4,
+#s5:checked~.cards #slide5{
+
+    box-shadow: 0 15px 30px rgba(0,0,0,-50%);
+    transform: translate3d(0, 0 , 0);
+}
+
+#s1:checked~.cards #slide2,
+#s2:checked~.cards #slide3,
+#s3:checked~.cards #slide4,
+#s4:checked~.cards #slide5,
+#s5:checked~.cards #slide1{
+
+    box-shadow: 0 15px 30px rgba(0,0,0,45%);
+    transform: translate3d(85%, 0 , -120px);
+}
+
+#s1:checked~.cards #slide3,
+#s2:checked~.cards #slide4,
+#s3:checked~.cards #slide5,
+#s4:checked~.cards #slide1,
+#s5:checked~.cards #slide2{
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    transform: translate3d(170%, 0 , -220px);
+}
+
+.restaurantDetails
+{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    color: #f8f8ff;
+}
+
+.restaurantDetails .info 
+{
+    width: 40%;
+}
+
+.restaurantDetails .info .restaurantDetail
+{
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-bottom: solid #f8f8ff;
+}
+
+.restaurantDetails .info .restaurantOpen-time 
+{
+    margin-top: 40px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    justify-content: space-between;
+    display: flex;
+}
+
+.restaurantDetails .info .restaurantOpen-time .title
+{
+    width: 30%;
+}
+
+.restaurantDetails .info .restaurantOpen-time .object
+{
+    width: 60%;
+}
+
+.restaurantDetails .info .restaurantAddress 
+{
+    margin-top: 40px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    justify-content: space-between;
+    display: flex;
+}
+
+.restaurantDetails .info .restaurantAddress .title
+{
+    width: 30%;
+}
+
+.restaurantDetails .info .restaurantAddress .object
+{
+    width: 60%;
+}
+
+.restaurantDetails .info .restaurantLinks
+{
+    margin-top: 40px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    justify-content: space-between;
+    display: flex;
+}
+
+.restaurantDetails .info .restaurantLinks .title
+{
+    width: 30%;
+}
+
+.restaurantDetails .info .restaurantLinks .object
+{
+    width: 60%;
+    font-size: 40px;
+}
+
+.restaurantDetails .info .restaurantLinks .object a
+{
+    color: #f8f8ff;
+    margin-right: 20px;
+    transition: all 0.5s ease;
+}
+
+.restaurantDetails .info .restaurantLinks .object a:hover
+{
+    color: #ff4584;
+}
+
+.restaurantDetails .info .restaurantWebsite
+{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.restaurantDetails .info .restaurantWebsite a
+{
+    color: #f8f8ff;
+    text-decoration: underline;
+    transition: all 0.5s ease;
+}
+
+.restaurantDetails .info .restaurantWebsite a:hover
+{
+    color:#ff4584
+}
+
+.restaurantDetails .map
+{
+    width: 40%;
+    text-align: center;
+}
+
+.row
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 25px;
+    padding-right: 25px;
+    max-height: 350px;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-right: 5px;
+    
+}   
+.row::-webkit-scrollbar{
+    width: 3px;
+}
+
+.row::-webkit-scrollbar-thumb{
+    background: #3d3d3d;
+    margin-right: 3px;
+    border-radius: 50px;
+}
+
+
+.restaurantReviews
+{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    background-color: #FAF9F6;
+    border-radius: 25px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.restaurantReviews .header
+{
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.restaurantReviews .newReviewButton
+{
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.restaurantReviews .popup
+{
+    display: none;
+    width: 550px;
+    background: #ffffff;
+    border-radius: 6px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 0 30px 30px;
+    padding-top: 10px;
+    color: #333;
+    border: solid #000;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.restaurantReviews .popup textarea
+{
+    height: 100px;
+}
+
+.restaurantReviews .popup.open
+{
+    display: block;
+}
+
+.reviews-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.reviews-container .review-box
+{
+    width: 500px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    background-color: #fff;
+    padding: 20px;
+    margin: 15px;
+}
+
+.reviews-container .review-box .profile .profile-img
+{
+    width: 65px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.reviews-container .review-box .profile .profile-img img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.reviews-container .review-box .profile
+{
+    display: flex;
+    align-items: center;
+}
+
+.reviews-container .review-box .profile .name-user
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews-container .review-box .profile .name-user strong
+{
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.reviews-container .review-box .profile .name-user span
+{
+    color: #979797;
+    font-size: 0.8rem;
+    width: 75%;
+}
+
+.reviews-container .review-box .ratings
+{
+    color: #f9d71c;
+}
+
+.reviews-container .review-box .box-top
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.reviews-container .review-box .comments
+{
+    font-size: 0.9rem;
+    color: #4b4b4b;
+    padding-bottom: 25px;
+    border-bottom: solid #4b4b4b;
+}
+
+.reviews-container .review-box .user-review
+{
+    font-size: 0.8rem;
+    color: #000;
+}
+
+.reviews-container .review-box .user-review a
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.reviews-container .review-box .user-review.open
+{
+    display: none;
+}
+
+.popupEdit
+{
+    display: none;
+    width: 550px;
+    background: #ffffff;
+    border-radius: 6px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 0 30px 30px;
+    padding-top: 10px;
+    color: #333;
+    border: solid #000;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.popupEdit textarea
+{
+    height: 100px;
+}
+
+.popupEdit.open
+{
+    display: block;
+}

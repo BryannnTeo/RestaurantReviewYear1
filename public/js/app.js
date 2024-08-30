@@ -1,0 +1,2 @@
+profile = []
+reviews_array = []

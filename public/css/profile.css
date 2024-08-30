@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&dislpay=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+.main
+{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/background_main.png);
+    background-position: center;
+    background-size: cover;
+}
+
+header
+{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid#ff4584;
+    padding: 28px 12%;
+    transition: all .50s ease;
+    display: flex;
+}
+
+
+header .logo
+{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+}
+
+header .logo img
+{
+    width: 65px;
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+header .navbar
+{
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+header .navbar a
+{
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 30px;
+    transition: all .50s ease; 
+}
+
+header .navbar a:hover
+{
+    color: #ff4584;
+}
+
+header .navbar a.active
+{
+    color: #ff4584;
+}
+
+header .menu
+{
+    display: flex;
+    align-items: center;
+    width: 250px;
+    justify-content: right;
+}
+
+header .menu img 
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+header .menu a
+{
+    margin-right: 25px;
+    margin-left: 10px;
+    padding-right: 10px;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+
+header .menu .select
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+}
+
+header .menu .select ul
+{
+    display: none;
+    position: absolute;
+    margin-top: 25px;
+    padding: 5px;
+    top: 120%;
+    right: 10px;
+    list-style: none;
+    background-color: #ff4584;
+    color: #fff;
+    width: 150px;
+    border-radius: 10px;
+    transition: all 0.5 ease;
+}
+
+header .menu .select ul li
+{
+    transition: all 0.5s ease;
+}
+
+header .menu .select ul li a:hover
+{
+    color: #fff;
+}
+
+header .menu .select ul.open
+{
+    display: block;
+}
+
+header .menu .select ul li
+{
+    padding: 5px 0px;
+}
+
+
+header .menu a:hover
+{
+    color: #ff4584;
+}
+
+.user
+{
+    display: flex;
+    align-items: center;
+}
+
+.user i
+{
+    color: #ff4584;
+    font-size: 28px;
+    margin-right: 7px;
+}
+
+header .menu #menu-icon
+{
+    font-size: 35px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+@media (max-width: 1280px){
+    header{
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    header .navbar a{
+        padding: 5px 0;
+        margin: 0px 20px;
+    }
+}
+
+@media (max-width: 1000px){
+    header .menu #menu-icon{
+        display: block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 29vh;
+        margin-top: 6px;
+        background: #ff4584;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+    }
+    header .navbar a{
+        display: block;
+        margin: 12px;
+        padding: 0px 25px;
+        transition: all .50s ease;
+    }
+    header .navbar a:hover{
+        color: #000;
+        transform: translateY(5px);   
+    }
+    header .navbar a.active{
+        color: #000;
+    }
+    header .navbar.open{
+        right: 2%;
+
+    }
+}
+
+.main
+{
+    padding-top: 100px;
+    padding-bottom: 20px;
+
+}
+
+footer 
+{
+    width: 100%;
+    right: 0;
+    background-image: url(../images/background.jpg);
+    padding: 28px 20%;
+    transition: all .50s ease;
+}
+
+footer p{
+    margin-left: 190px;
+}
+
+.main .panel
+{
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.main .left 
+{
+    margin-top: 50px;
+    width: 40%;
+    margin-left: auto;
+    display: flex;
+}
+
+.main .left .edit
+{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+}
+
+.main .left .form-control
+{
+    margin-top: 10px;
+}
+
+.main .left button 
+{
+    margin-top: 50px;
+}
+
+
+.main .right
+{
+    margin-top: 50px;
+    width: 40%;
+    margin-right: auto;
+}
+
+.main .right .form 
+{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main .right .form img
+{
+    margin-top: 20px;
+    width:250px; 
+    height:250px; 
+    border: none;
+    border-radius: 50%;
+}
+
+.form-row{
+    margin-top: -20px;
+}
+
+.form{
+    margin-top: -20px;
+}
+
+.form-control{
+    height: 40px;
+    width: 250px;
+}
+
+button{
+    height: 35px;
+    width: 110px;
+}
+
+.button{
+    position: absolute;
+    top: 500px;
+    left: 253px;
+}
+
+#update{
+    border: 0;
+    cursor: pointer;
+    transition: .3s
+}
+
+#delete{
+    margin-left:23px;
+    background-color:rgba(255, 74, 74, 0.833);
+    border:0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#update:hover{
+    background-color: rgb(145, 145, 145);
+}
+
+#delete:hover{
+    background-color:rgb(255, 46, 46);
+}
